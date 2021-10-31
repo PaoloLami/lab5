@@ -2,14 +2,18 @@
 #!/usr/bin/python37all
 import time
 import cgi
+import stepper
 
 #Get data from html and create file
 data = cgi.FieldStorage()
 angle = data.getvalue('angle')
+submit = data.getvalue('submit')
 
 with open('angle.txt', 'w') as f:
   f.write(str(angle))
-
+  if submit == 'zero':
+    stepper.zero()
+    f.truncate()
 
 print('Content-type: text/html\n\n')
 print('<html>')
@@ -31,4 +35,3 @@ print('<iframe width="400" height="250"
 </iframe>')
 print('<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1550885/widgets/374420"></iframe>')
 print('</html>')
-

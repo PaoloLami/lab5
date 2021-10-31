@@ -1,5 +1,4 @@
 #Paolo Lami, ENME441 Lab 5
-#!/usr/bin/python37all
 import time
 import cgi
 import stepper

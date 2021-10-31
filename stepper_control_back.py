@@ -14,9 +14,9 @@ try:
       angleNEW = f.readlines()[-1]
       anglePREV = f.readlines()[-2]
       angle = angleNEW - anglePREV
-      if angle > 0
+      if angle > 0:
         dir = -1
-      elif angle < 0
+      elif angle < 0:
         dir = 1
       stepper.goAngle(angle,dir)
 

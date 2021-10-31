@@ -4,11 +4,13 @@ import stepper
 
 #Get data from html and create file
 data = cgi.FieldStorage()
-angle = data.getvalue('angle')
-submit = data.getvalue('submit')
 
-with open('angle.txt', 'w') as f: #writes in file bruh
+if ('angle' in data):
+  with open('angle.txt', 'w') as f:
     f.write(str(angle)) 
+elif ('zero' in data):
+  with open('angle.txt', 'w') as f: 
+    f.write(str(0)) 
 
 print('Content-type: text/html\n\n')
 print('<html>')

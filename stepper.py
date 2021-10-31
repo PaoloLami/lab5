@@ -68,19 +68,11 @@ sens = PCF8591(0x48)
 
 def zero(): #WOORKING, check sensitivity everytime
   
-  ledPin = 19
   light = sens.read(0)*10
   print(light)
   
-  while light > 455:
-    GPIO.setmode(GPIO.BCM) 
-    GPIO.setup(ledPin, GPIO.OUT)
-    GPIO.output(ledPin, 1)  
+  while light > 455: 
     light = sens.read(0)*10  
     print(light)
     halfstep(1)
     
-  if light < 450:
-      GPIO.setmode(GPIO.BCM)
-      GPIO.setup(ledPin, GPIO.OUT) 
-      GPIO.output(ledPin,0) 

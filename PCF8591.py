@@ -1,5 +1,4 @@
 import smbus
-import time
 
 class PCF8591:
 

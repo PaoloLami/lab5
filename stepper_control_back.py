@@ -11,10 +11,10 @@ api = "GA4XGELVZMZ7IXTQ"
 try:
   while True:
     with open('angle.txt', 'w') as f:
-      angleNEW = f.readlines()[-1]
-      anglePREV = f.readlines()[-2]
-      angle = angleNEW - anglePREV
-      if angle > 0:
+      #angleNEW = f.readlines()[-1]
+      #anglePREV = f.readlines()[-2]
+      angle = f.read()
+      if angle > 180:
         dir = -1
       elif angle < 0:
         dir = 1

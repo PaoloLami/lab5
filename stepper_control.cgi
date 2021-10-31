@@ -8,10 +8,7 @@ angle = data.getvalue('angle')
 submit = data.getvalue('submit')
 
 with open('angle.txt', 'w') as f: #writes in file bruh
-  f.write(str(angle))
-  if submit == 'zero':
-    stepper.zero()
-    f.truncate()
+    f.write(str(angle)) 
 
 print('Content-type: text/html\n\n')
 print('<html>')
@@ -25,3 +22,5 @@ print('</form>')
 print('<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1550885/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Motor+Angle+vs+Time&type=line&xaxis=Time&yaxis=Motor+Angle"></iframe>')
 print('<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1550885/widgets/374420"></iframe>')
 print('</html>')
+
+

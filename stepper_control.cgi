@@ -1,5 +1,4 @@
 #!/usr/bin/python37all
-import time
 import cgi
 import stepper
 
@@ -19,7 +18,7 @@ print('<html>')
 print('<form action="/cgi-bin/stepper_control.cgi" method="POST">')
 print('Angle:<br>')
 print('<input type="text" name="angle"><br>')
-print('<input type="submit" value="Submit">\n')
+print('<input type="submit" value="Submit"><br>')
 print('Reset angle to 0:<br>')
 print('<input type="submit" value="zero">')
 print('</form>')

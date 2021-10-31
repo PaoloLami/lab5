@@ -1,5 +1,4 @@
-#Paolo Lami, ENME441 Lab 5
-import time
+#!/usr/bin/python37all
 import cgi
 import stepper
 
@@ -8,7 +7,7 @@ data = cgi.FieldStorage()
 angle = data.getvalue('angle')
 submit = data.getvalue('submit')
 
-with open('angle.txt', 'w') as f:
+with open('angle.txt', 'w') as f: #writes in file bruh
   f.write(str(angle))
   if submit == 'zero':
     stepper.zero()
@@ -19,7 +18,7 @@ print('<html>')
 print('<form action="/cgi-bin/stepper_control.cgi" method="POST">')
 print('Angle:<br>')
 print('<input type="text" name="angle"><br>')
-print('<input type="submit" value="Submit">\n')
+print('<input type="submit" value="Submit"><br>')
 print('Reset angle to 0:<br>')
 print('<input type="submit" value="zero">')
 print('</form>')

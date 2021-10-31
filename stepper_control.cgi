@@ -9,7 +9,7 @@ data = cgi.FieldStorage()
 angle = data.getvalue('angle')
 submit = data.getvalue('submit')
 
-with open('angle.txt', 'w') as f: #writes in file
+with open('angle.txt', 'w') as f: #writes in file bruh
   f.write(str(angle))
   if submit == 'zero':
     stepper.zero()

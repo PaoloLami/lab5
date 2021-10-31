@@ -70,9 +70,3 @@ def zero():
     GPIO.output(ledPin, 1)
     halfstep(1)
   GPIO.output(ledPin, 0)
-
-try:
-  moveSteps(1000,1) #move 1000 steps in ccw direction
-except:
-  pass
-GPIO.cleanup()

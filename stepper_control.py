@@ -2,6 +2,7 @@
 #!/usr/bin/python37all
 import time
 import cgi
+import stepper
 
 #Get data from html and create file
 data = cgi.FieldStorage()
@@ -10,7 +11,8 @@ submit = data.getvalue('submit')
 
 with open('angle.txt', 'w') as f:
   f.write(str(angle))
-  if submit == 'zero': 
+  if submit == 'zero':
+    stepper.zero()
     f.truncate()
 
 print('Content-type: text/html\n\n')

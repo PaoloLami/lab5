@@ -5,10 +5,7 @@ from urllib.request import urlopen  # use to send/receive data
 from urllib.parse import urlencode  # use to structure a GET string
 
 anglePREV = 0
-ledPin = #
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(ledPin, GPIO.OUT)
 api = "GA4XGELVZMZ7IXTQ"
 
 try:

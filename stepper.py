@@ -4,6 +4,9 @@ import PCF8591 as ADC
 
 GPIO.setmode(GPIO.BCM)
 
+ledPin = 19
+GPIO.setup(ledPin, GPIO.OUT)
+
 pins = [18,21,22,23] # controller inputs: in1, in2, in3, in4
 for pin in pins:
   GPIO.setup(pin, GPIO.OUT, initial=0)
@@ -43,7 +46,9 @@ def zero():
   sens = ADC(0x48)
   light = sens.write(sens.read(0))
   while light < 50:
+    GPIO.output(ledPin, 1)
     halfstep(1)
+  GPIO.output(ledPin, 0)
 
 try:
   moveSteps(1000,1) #move 1000 steps in ccw direction
